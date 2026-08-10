@@ -36,7 +36,7 @@ img{max-width:100%;display:block}
 .primary-header{background:#fff;box-shadow:0 3px 15px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000}
 .primary-header-inner{min-height:85px;display:flex;align-items:center;justify-content:space-between;gap:30px}
 
-/* New Text Logo Style */
+/* Text Logo Style */
 .brand-logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; justify-content: center; }
 .brand-title { font-size: 26px; font-weight: 800; color: var(--blue); letter-spacing: 0.5px; text-transform: uppercase; }
 .brand-title span { color: #00a0e3; } 
@@ -76,7 +76,7 @@ img{max-width:100%;display:block}
 .section-heading h2{font-size:38px;margin-bottom:12px}
 .section-heading p{color:var(--muted);max-width:700px;margin:auto;line-height:1.7}
 
-/* COURSES */
+/* DIPLOMA COURSES */
 .course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .course-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 6px 22px rgba(15,23,42,.06);transition:.35s}
 .course-card:hover{transform:translateY(-8px);box-shadow:0 18px 35px rgba(15,23,42,.12)}
@@ -88,6 +88,15 @@ img{max-width:100%;display:block}
 .course-meta{display:flex;justify-content:space-between;gap:8px;margin:20px 0;color:var(--muted);font-size:13px;flex-wrap:wrap}
 .course-btn{display:block;text-align:center;background:var(--blue);color:#fff;padding:12px;border-radius:7px;font-weight:700}
 .course-btn:hover{background:#06143f}
+
+/* STANDALONE COURSES (NEW) */
+.standalone-bg { background-color: #f8fafc; }
+.standalone-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.st-card { display: flex; align-items: flex-start; gap: 15px; background: #fff; padding: 25px; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: 0.3s; }
+.st-card:hover { transform: translateY(-5px); border-color: var(--blue); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+.st-icon { width: 55px; height: 55px; background: #eef3ff; color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 26px; border-radius: 12px; flex-shrink: 0; }
+.st-info h4 { font-size: 17px; margin-bottom: 8px; color: var(--dark-blue); font-weight: 700; }
+.st-info p { font-size: 14px; color: var(--muted); line-height: 1.5; margin: 0; }
 
 /* ABOUT */
 .about{background:var(--blue);color:#fff}
@@ -122,8 +131,8 @@ img{max-width:100%;display:block}
 .faq-item.active .faq-answer{max-height:220px;padding:0 20px 18px}
 
 /* REVIEWS */
-.reviews{background:#f8fafc}
-.rating-bar{background:#fff;border-radius:50px;padding:16px 28px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 15px rgba(0,0,0,.05);margin-bottom:35px}
+.reviews{background:#fff}
+.rating-bar{background:#fff;border-radius:50px;padding:16px 28px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 15px rgba(0,0,0,.05);margin-bottom:35px; border: 1px solid var(--border);}
 .rating-left{display:flex;align-items:center;gap:14px}
 .rating-score{font-size:24px;font-weight:800}
 .stars{color:#fbbc05;font-size:21px;letter-spacing:2px}
@@ -153,7 +162,6 @@ footer{background:#030d3e;color:#fff;padding-top:60px}
 .contact-icon{width:34px;height:34px;flex:0 0 34px;background:#fff;color:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center}
 .social-links{display:flex;gap:10px;margin-top:18px}
 .social-links a{width:40px;height:40px;background:#fff;color:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.map iframe{width:100%;height:190px;border:0;border-radius:12px}
 .copyright{border-top:1px solid rgba(255,255,255,.12);padding:18px 0}
 .copyright-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#d2d7e6;font-size:13px}
 
@@ -172,22 +180,6 @@ footer{background:#030d3e;color:#fff;padding-top:60px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
 .error{font-size:12px;color:#dc2626;margin-top:4px}
 .success-message{display:none;background:#ecfdf5;color:#047857;padding:12px;border-radius:8px;margin-top:15px;font-size:14px}
-
-/* PLACEMENT */
-.placement{position:relative;text-align:center;padding:35px 25px;overflow:hidden;background:#f7f7f7}
-.placement:before,.placement:after{content:"";position:absolute;background:var(--yellow);z-index:0}
-.placement:before{width:160px;height:120px;left:-45px;top:-35px;border-radius:0 0 120px 0}
-.placement:after{width:180px;height:120px;right:-45px;bottom:-45px;border-radius:120px 0 0 0}
-.placement>*{position:relative;z-index:2}
-.placement-logo{width:170px;margin:0 auto 15px}
-.placement h2{font-size:40px;color:var(--dark-blue);margin-bottom:18px}
-.student-wrap{width:175px;height:175px;padding:6px;border-radius:50%;background:var(--yellow);margin:auto}
-.student-wrap img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:5px solid #fff}
-.student-name{display:inline-block;margin-top:15px;background:var(--dark-blue);color:#fff;padding:10px 30px;border-radius:8px;font-size:21px;font-weight:700}
-.placement-message{font-size:20px;color:var(--dark-blue);font-weight:700;margin-top:22px}
-.placement-message span{color:#f0ad00}
-.designation{color:#555;font-weight:600;margin-top:8px}
-.badge-success{display:inline-block;margin-top:18px;border:2px solid var(--yellow);color:#d39e00;padding:8px 18px;border-radius:30px;font-size:13px;font-weight:700}
 
 /* BACK TO TOP */
 .back-top{position:fixed;right:22px;bottom:22px;width:45px;height:45px;border:0;border-radius:50%;background:var(--blue);color:#fff;display:none;align-items:center;justify-content:center;cursor:pointer;z-index:2000}
@@ -210,7 +202,7 @@ footer{background:#030d3e;color:#fff;padding-top:60px}
     .hero{min-height:600px}
     .hero h1{font-size:36px}
     .hero-content{padding:60px 0}
-    .course-grid,.feature-grid,.footer-grid{grid-template-columns:1fr}
+    .course-grid,.feature-grid,.footer-grid, .standalone-grid{grid-template-columns:1fr}
     .section{padding:65px 0}
     .section-heading h2,.about h2{font-size:30px}
     .rating-bar{border-radius:18px;flex-direction:column;gap:15px;text-align:center}
@@ -241,7 +233,6 @@ footer{background:#030d3e;color:#fff;padding-top:60px}
 
 <header class="primary-header">
     <div class="container primary-header-inner">
-        <!-- New Text Logo -->
         <a class="header-logo brand-logo" href="#home">
             <div class="brand-title">VISION <span>ORBIT</span></div>
             <div class="brand-subtitle">IT SERVICES</div>
@@ -252,7 +243,7 @@ footer{background:#030d3e;color:#fff;padding-top:60px}
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#courses">Diploma Courses</a></li>
-                <li><a href="#courses">Standalone Courses</a></li>
+                <li><a href="#standalone-courses">Standalone Courses</a></li> <!-- Updated Link Here -->
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -267,7 +258,8 @@ footer{background:#030d3e;color:#fff;padding-top:60px}
     <div id="mobileMenu" style="display:none;background:#fff;border-top:1px solid #eee;padding:15px 5%;">
         <a href="#home" onclick="toggleMobileMenu()" style="display:block;padding:10px">Home</a>
         <a href="#about" onclick="toggleMobileMenu()" style="display:block;padding:10px">About Us</a>
-        <a href="#courses" onclick="toggleMobileMenu()" style="display:block;padding:10px">Courses</a>
+        <a href="#courses" onclick="toggleMobileMenu()" style="display:block;padding:10px">Diploma Courses</a>
+        <a href="#standalone-courses" onclick="toggleMobileMenu()" style="display:block;padding:10px">Standalone Courses</a> <!-- Updated Link Here -->
         <a href="#reviews" onclick="toggleMobileMenu()" style="display:block;padding:10px">Reviews</a>
         <a href="#contact" onclick="toggleMobileMenu()" style="display:block;padding:10px">Contact</a>
     </div>
@@ -296,12 +288,12 @@ footer{background:#030d3e;color:#fff;padding-top:60px}
     <img class="hero-image" src="http://codingclasses.in/public/assets/img/ed-images/hero-2-right-img.png" alt="IT Training">
 </section>
 
-<!-- COURSES -->
+<!-- DIPLOMA COURSES -->
 <section class="section" id="courses">
     <div class="container">
         <div class="section-heading">
             <div class="small">Top Class Courses</div>
-            <h2>Courses Recommended for You</h2>
+            <h2>Diploma Courses Recommended for You</h2>
             <p>Choose practical, career-focused programs designed to build strong technical skills.</p>
         </div>
 
@@ -318,41 +310,135 @@ footer{background:#030d3e;color:#fff;padding-top:60px}
                         <span><i class="fa-regular fa-user"></i> Students 120</span>
                         <span><i class="fa-regular fa-eye"></i> View 18K</span>
                     </div>
-                    <a class="course-btn" href="#">View Details</a>
+                    <button class="course-btn" style="width:100%; border:none; cursor:pointer;" onclick="openEnroll()">View Details</button>
                 </div>
             </article>
 
             <article class="course-card">
                 <div class="course-img">
-                    <img src="http://codingclasses.in/public/assets/img/vector_img/img%281%29.jpg" alt="Digital Marketing">
+                    <img src="http://codingclasses.in/public/assets/img/vector_img/ai.jpg" alt="AI Full Stack">
                 </div>
                 <div class="course-body">
-                    <h3>Digital Marketing Mastery</h3>
-                    <p>Google Ads, social media marketing and branding strategies.</p>
+                    <h3>AI Full Stack Development</h3>
+                    <p>Build intelligent full stack applications using AI tools, APIs and modern frameworks.</p>
                     <div class="course-meta">
-                        <span><i class="fa-regular fa-file"></i> Lesson 20</span>
-                        <span><i class="fa-regular fa-user"></i> Students 150</span>
-                        <span><i class="fa-regular fa-eye"></i> View 22K</span>
+                        <span><i class="fa-regular fa-file"></i> Lesson 35</span>
+                        <span><i class="fa-regular fa-user"></i> Students 140</span>
+                        <span><i class="fa-regular fa-eye"></i> View 25K</span>
                     </div>
-                    <a class="course-btn" href="#">View Details</a>
+                    <button class="course-btn" style="width:100%; border:none; cursor:pointer;" onclick="openEnroll()">View Details</button>
                 </div>
             </article>
 
             <article class="course-card">
                 <div class="course-img">
-                    <img src="http://codingclasses.in/public/assets/img/vector_img/ai.jpg" alt="Data Science and AI">
+                    <img src="http://codingclasses.in/public/assets/img/vector_img/img%281%29.jpg" alt="MERN Stack">
                 </div>
                 <div class="course-body">
-                    <h3>Data Science & AI</h3>
-                    <p>Learn Python, machine learning, AI concepts and advanced data visualization.</p>
+                    <h3>MERN Stack Development</h3>
+                    <p>Build modern full stack web applications using MongoDB, Express.js, React and Node.js.</p>
                     <div class="course-meta">
                         <span><i class="fa-regular fa-file"></i> Lesson 30</span>
                         <span><i class="fa-regular fa-user"></i> Students 200</span>
                         <span><i class="fa-regular fa-eye"></i> View 30K</span>
                     </div>
-                    <a class="course-btn" href="#">View Details</a>
+                    <button class="course-btn" style="width:100%; border:none; cursor:pointer;" onclick="openEnroll()">View Details</button>
                 </div>
             </article>
+        </div>
+    </div>
+</section>
+
+<!-- STANDALONE COURSES (NEW SECTION) -->
+<section class="section standalone-bg" id="standalone-courses">
+    <div class="container">
+        <div class="section-heading">
+            <div class="small">Upgrade Your Skills</div>
+            <h2>Standalone Courses</h2>
+            <p>Master specific programming languages and technologies to boost your resume.</p>
+        </div>
+
+        <div class="standalone-grid">
+            <!-- 1 -->
+            <div class="st-card">
+                <div class="st-icon"><i class="fa-solid fa-code"></i></div>
+                <div class="st-info">
+                    <h4>Front-End Development</h4>
+                    <p>Create stunning user interfaces using HTML, CSS, JavaScript and frameworks.</p>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="st-card">
+                <div class="st-icon"><i class="fa-solid fa-server"></i></div>
+                <div class="st-info">
+                    <h4>Back-End Development</h4>
+                    <p>Build robust server-side applications and RESTful APIs.</p>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="st-card">
+                <div class="st-icon"><i class="fa-brands fa-html5"></i></div>
+                <div class="st-info">
+                    <h4>HTML, CSS & JavaScript</h4>
+                    <p>Learn the foundation of web development and build interactive websites.</p>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="st-card">
+                <div class="st-icon"><i class="fa-brands fa-python"></i></div>
+                <div class="st-info">
+                    <h4>Python Programming</h4>
+                    <p>From basics to advanced Python programming for web and data science.</p>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="st-card">
+                <div class="st-icon"><i class="fa-solid fa-c"></i></div>
+                <div class="st-info">
+                    <h4>C Programming</h4>
+                    <p>Build a strong foundation in C programming and problem-solving.</p>
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="st-card">
+                <div class="st-icon"><i class="fa-brands fa-java"></i></div>
+                <div class="st-info">
+                    <h4>Java Programming</h4>
+                    <p>Learn core Java and OOPs concepts for enterprise application development.</p>
+                </div>
+            </div>
+            <!-- 7 -->
+            <div class="st-card">
+                <div class="st-icon"><i class="fa-brands fa-php"></i></div>
+                <div class="st-info">
+                    <h4>PHP Programming</h4>
+                    <p>Learn server-side scripting and build dynamic websites with PHP.</p>
+                </div>
+            </div>
+            <!-- 8 -->
+            <div class="st-card">
+                <div class="st-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="st-info">
+                    <h4>Stock Market Trading</h4>
+                    <p>Learn trading strategies, technical analysis and smart investment techniques.</p>
+                </div>
+            </div>
+            <!-- 9 -->
+            <div class="st-card">
+                <div class="st-icon"><i class="fa-solid fa-robot"></i></div>
+                <div class="st-info">
+                    <h4>Artificial Intelligence (AI)</h4>
+                    <p>Learn AI concepts, machine learning, deep learning and implementations.</p>
+                </div>
+            </div>
+            <!-- 10 -->
+            <div class="st-card">
+                <div class="st-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                <div class="st-info">
+                    <h4>Digital Marketing</h4>
+                    <p>Master SEO, SEM, Social Media, Content Marketing and grow online presence.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -547,8 +633,8 @@ footer{background:#030d3e;color:#fff;padding-top:60px}
             <ul class="footer-links">
                 <li><a href="#home">› Home</a></li>
                 <li><a href="#about">› About Us</a></li>
-                <li><a href="#courses">› Courses</a></li>
-                <li><a href="#reviews">› Reviews</a></li>
+                <li><a href="#courses">› Diploma Courses</a></li>
+                <li><a href="#standalone-courses">› Standalone Courses</a></li>
                 <li><a href="#contact">› Contact</a></li>
             </ul>
         </div>
@@ -556,10 +642,10 @@ footer{background:#030d3e;color:#fff;padding-top:60px}
         <div>
             <h3 class="footer-title">Courses</h3>
             <ul class="footer-links">
-                <li><a href="#">› Python Full Stack</a></li>
-                <li><a href="#">› Digital Marketing</a></li>
-                <li><a href="#">› Data Science & AI</a></li>
-                <li><a href="#courses">› Full Stack Development</a></li>
+                <li><a href="#courses">› Python Full Stack</a></li>
+                <li><a href="#courses">› AI Full Stack</a></li>
+                <li><a href="#standalone-courses">› Front-End Development</a></li>
+                <li><a href="#standalone-courses">› Digital Marketing</a></li>
             </ul>
         </div>
 
@@ -612,24 +698,6 @@ footer{background:#030d3e;color:#fff;padding-top:60px}
                 <button class="btn btn-primary" type="submit">Submit</button>
                 <div class="success-message" id="successMessage">Thank you! Your enrollment request has been submitted.</div>
             </form>
-        </div>
-    </div>
-</div>
-
-<!-- PLACEMENT MODAL -->
-<div class="modal-backdrop" id="placementModal">
-    <div class="modal">
-        <div class="placement">
-            <button class="close-modal" onclick="closeModal('placementModal')" style="position:absolute;right:18px;top:12px;z-index:5">&times;</button>
-            <img class="placement-logo" src="http://codingclasses.in/public/assets/img/loader/class_logo.png" alt="Logo">
-            <h2>Congratulations</h2>
-            <div class="student-wrap">
-                <img src="http://codingclasses.in/public/assets/img/loader/danish.jpeg" alt="Mr. Danish">
-            </div>
-            <div class="student-name">Mr. Danish</div>
-            <div class="placement-message">For Being Placed In <span>TCS</span></div>
-            <div class="designation">Data Science Student</div>
-            <div class="badge-success">Successfully Placed</div>
         </div>
     </div>
 </div>
