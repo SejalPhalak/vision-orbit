@@ -116,13 +116,12 @@ footer{background:#030d3e;color:#fff;padding-top:50px}
 .form-control:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(9,30,94,.1)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .error{font-size:11.5px;color:#dc2626;margin-top:3px}
-.success-message{display:none;background:#ecfdf5;color:#047857;padding:10px;border-radius:6px;margin-top:12px;font-size:13px}
+.success-message{display:none;background:#ecfdf5;color:#047857;padding:10px;border-radius:6px;margin-top:12px;font-size:13px;text-align:center}
 
 /* BACK TO TOP */
 .back-top{position:fixed;right:18px;bottom:18px;width:40px;height:40px;border:0;border-radius:50%;background:var(--blue);color:#fff;display:none;align-items:center;justify-content:center;cursor:pointer;z-index:2000;box-shadow:0 4px 10px rgba(0,0,0,0.2)}
 .back-top.show{display:flex}
 
-/* RESPONSIVE */
 @media(max-width:992px){
     .main-menu{display:none}
     .mobile-toggle{display:block}
@@ -179,7 +178,7 @@ footer{background:#030d3e;color:#fff;padding-top:50px}
         </nav>
 
         <div class="header-actions">
-            <button class="btn btn-primary" onclick="openEnroll()">Enroll Now</button>
+            <button class="btn btn-primary" onclick="openEnroll('PHP Full Stack')">Enroll Now</button>
             <button class="mobile-toggle" aria-label="Open Navigation" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button>
         </div>
     </div>
@@ -191,7 +190,7 @@ footer{background:#030d3e;color:#fff;padding-top:50px}
         <a href="index.html#standalone-courses" onclick="toggleMobileMenu()" style="display:block;padding:10px 0;font-weight:600;border-bottom:1px solid #f1f5f9;">Standalone Courses</a>
         <a href="index.html#reviews" onclick="toggleMobileMenu()" style="display:block;padding:10px 0;font-weight:600;border-bottom:1px solid #f1f5f9;">Reviews</a>
         <a href="index.html#contact" onclick="toggleMobileMenu()" style="display:block;padding:10px 0;font-weight:600;border-bottom:1px solid #f1f5f9;">Contact</a>
-        <button class="btn btn-primary" onclick="openEnroll();toggleMobileMenu()" style="width:100%;margin-top:15px;">Enroll Now</button>
+        <button class="btn btn-primary" onclick="openEnroll('PHP Full Stack');toggleMobileMenu()" style="width:100%;margin-top:15px;">Enroll Now</button>
     </div>
 </header>
 
@@ -216,7 +215,7 @@ footer{background:#030d3e;color:#fff;padding-top:50px}
                 <li><i class="fa-solid fa-check"></i> Complete ERP Project Experience</li>
                 <li><i class="fa-solid fa-check"></i> Placement Assistance & Mock Tests</li>
             </ul>
-            <button class="btn btn-primary" style="width:100%" onclick="openEnroll()">Apply For This Course</button>
+            <button class="btn btn-primary" style="width:100%" onclick="openEnroll('PHP Full Stack')">Apply For This Course</button>
         </div>
     </div>
 </section>
@@ -372,28 +371,28 @@ footer{background:#030d3e;color:#fff;padding-top:50px}
         </div>
         <div class="modal-body">
             <form id="enrollForm" onsubmit="submitEnroll(event)">
+                <input type="hidden" name="_subject" value="PHP Full Stack Application - Vision Orbit">
+                <input type="hidden" name="_captcha" value="false">
+
                 <div class="form-row">
                     <div class="form-group">
                         <label>Name</label>
-                        <input class="form-control" id="name" type="text" placeholder="Full Name" required>
-                        <div class="error" id="nameError"></div>
+                        <input class="form-control" name="Name" id="name" type="text" placeholder="Full Name" required>
                     </div>
                     <div class="form-group">
                         <label>Mobile</label>
-                        <input class="form-control" id="mobile" type="tel" placeholder="Mobile Number" required>
-                        <div class="error" id="mobileError"></div>
+                        <input class="form-control" name="Mobile" id="mobile" type="tel" placeholder="Mobile Number" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" id="email" type="email" placeholder="Email Address" required>
-                    <div class="error" id="emailError"></div>
+                    <input class="form-control" name="Email" id="email" type="email" placeholder="Email Address" required>
                 </div>
                 <div class="form-group">
                     <label>Description / Interested Course</label>
-                    <textarea class="form-control" id="description" rows="3">PHP Full Stack Development</textarea>
+                    <textarea class="form-control" name="Interested_Course" id="description" rows="3">PHP Full Stack Development</textarea>
                 </div>
-                <button class="btn btn-primary" type="submit" style="width:100%;">Submit Application</button>
+                <button class="btn btn-primary" id="submitBtn" type="submit" style="width:100%;">Submit Application</button>
                 <div class="success-message" id="successMessage">Thank you! Your enrollment request has been submitted.</div>
             </form>
         </div>
@@ -412,7 +411,10 @@ function toggleMobileMenu(){
 function toggleModule(header){
     header.nextElementSibling.classList.toggle('show');
 }
-function openEnroll(){
+function openEnroll(courseName = ''){
+    if(courseName) {
+        document.getElementById("description").value = courseName;
+    }
     document.getElementById("enrollModal").classList.add("show");
     document.body.style.overflow = "hidden";
 }
@@ -425,15 +427,42 @@ document.querySelectorAll(".modal-backdrop").forEach(backdrop=>{
         if(e.target===backdrop) closeModal(backdrop.id);
     });
 });
+
 function submitEnroll(e){
     e.preventDefault();
-    document.getElementById("successMessage").style.display="block";
-    document.getElementById("enrollForm").reset();
-    setTimeout(()=>{
-        closeModal("enrollModal");
-        document.getElementById("successMessage").style.display="none";
-    },2000);
+    const btn = document.getElementById("submitBtn");
+    const msg = document.getElementById("successMessage");
+    const form = document.getElementById("enrollForm");
+
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+
+    const formData = new FormData(form);
+
+    fetch("https://formsubmit.co/ajax/sejalphalak737@gmail.com", {
+        method: "POST",
+        headers: { 'Accept': 'application/json' },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        msg.style.display = "block";
+        form.reset();
+        btn.textContent = "Submitted";
+        setTimeout(() => {
+            closeModal("enrollModal");
+            msg.style.display = "none";
+            btn.disabled = false;
+            btn.textContent = "Submit Application";
+        }, 2200);
+    })
+    .catch(error => {
+        alert("There was an issue sending your request. Please try again.");
+        btn.disabled = false;
+        btn.textContent = "Submit Application";
+    });
 }
+
 window.addEventListener("scroll",()=>{
     document.getElementById("backTop").classList.toggle("show", window.scrollY > 400);
 });
