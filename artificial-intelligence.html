@@ -11,7 +11,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-:root{--blue:#091e5e;--dark-blue:#2c2c72;--yellow:#ffc107;--light:#f8fafc;--text:#1e293b;--muted:#64748b;--white:#fff;--border:#e2e8f0;}
+:root{
+    --blue:#091e5e;
+    --dark-blue:#2c2c72;
+    --yellow:#ffc107;
+    --light:#f8fafc;
+    --text:#1e293b;
+    --muted:#64748b;
+    --white:#fff;
+    --border:#e2e8f0;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:Inter,Arial,sans-serif;color:var(--text);background:#fff;overflow-x:hidden}
@@ -19,19 +28,34 @@ a{text-decoration:none;color:inherit}
 img{max-width:100%;height:auto;display:block}
 .container{width:min(1180px,92%);margin:auto}
 
+/* HEADER & LOGO CSS */
+.top-bar{background:var(--blue);color:#fff;font-size:13px;padding:8px 0}
+.top-bar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.top-bar a{color:#fff}
+.top-bar-phones{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.social-list{list-style:none;display:flex;gap:15px}
 .primary-header{background:#fff;box-shadow:0 3px 15px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000}
 .primary-header-inner{min-height:75px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand-logo{text-decoration:none;display:flex;flex-direction:column;line-height:1}
-.brand-title{font-size:24px;font-weight:800;color:var(--blue);letter-spacing:.5px;text-transform:uppercase}
-.brand-title span{color:#00a0e3}
-.brand-subtitle{font-size:10px;font-weight:600;color:var(--muted);letter-spacing:3.5px;margin-top:4px}
+
+/* Text Logo Style */
+.brand-logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; justify-content: center; }
+.brand-title { font-size: 24px; font-weight: 800; color: var(--blue); letter-spacing: 0.5px; text-transform: uppercase; }
+.brand-title span { color: #00a0e3; } 
+.brand-subtitle { font-size: 10px; font-weight: 600; color: var(--muted); letter-spacing: 3.5px; margin-top: 4px; text-align: left; }
+.footer-logo-text .brand-title { color: #fff; }
+.footer-logo-text .brand-title span { color: var(--yellow); }
+.footer-logo-text .brand-subtitle { color: #d2d7e6; }
+
 .main-menu{display:flex;list-style:none;align-items:center;gap:22px}
 .main-menu a{font-size:15px;font-weight:600;color:#334155;transition:color .2s}
 .main-menu a:hover{color:var(--blue)}
-.btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;padding:12px 22px;border-radius:6px;font-weight:700;transition:.3s}
+.header-actions{display:flex;align-items:center;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;padding:12px 22px;border-radius:6px;font-weight:700;transition:.3s;text-align:center}
 .btn-primary{background:var(--blue);color:#fff}
 .btn-primary:hover{background:#06143f}
+.mobile-toggle{display:none;background:none;border:0;font-size:24px;color:var(--blue);cursor:pointer;padding:5px}
 
+/* COURSE HERO */
 .course-hero{background:linear-gradient(135deg,#091e5e 0%,#1e3a8a 100%);color:#fff;padding:60px 0}
 .course-hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:40px;align-items:center}
 .course-hero h1{font-size:38px;line-height:1.2;margin-bottom:15px}
@@ -45,6 +69,7 @@ img{max-width:100%;height:auto;display:block}
 .feature-list li{display:flex;align-items:center;gap:10px;font-size:14px;margin-bottom:10px;color:var(--muted)}
 .feature-list li i{color:#10b981}
 
+/* DETAILS & SYLLABUS */
 .details-section{padding:70px 0}
 .details-grid{display:grid;grid-template-columns:2fr 1fr;gap:40px}
 .section-title{font-size:24px;margin-bottom:20px;color:var(--blue);position:relative;padding-bottom:8px}
@@ -61,42 +86,116 @@ img{max-width:100%;height:auto;display:block}
 .sidebar-box{background:#f8fafc;border:1px solid var(--border);padding:24px;border-radius:12px;margin-bottom:25px}
 .sidebar-box h4{font-size:18px;margin-bottom:15px;color:var(--dark-blue)}
 
+/* FOOTER */
 footer{background:#030d3e;color:#fff;padding-top:50px}
 .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:30px;padding-bottom:35px}
+.footer-about{color:#d2d7e6;line-height:1.7;font-size:13.5px;margin-top:12px}
+.footer-title{font-size:17px;margin-bottom:18px}
 .footer-links{list-style:none}
 .footer-links li{margin-bottom:10px}
-.footer-links a{color:#d2d7e6;font-size:13.5px}
+.footer-links a{color:#d2d7e6;font-size:13.5px;transition:.2s}
+.footer-links a:hover{color:#fff}
+.contact-item{display:flex;gap:10px;margin-bottom:14px;color:#d2d7e6;font-size:13.5px;line-height:1.5}
+.contact-icon{width:30px;height:30px;flex:0 0 30px;background:#fff;color:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}
+.social-links{display:flex;gap:10px;margin-top:15px}
+.social-links a{width:36px;height:36px;background:#fff;color:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
+.copyright{border-top:1px solid rgba(255,255,255,.12);padding:16px 0}
+.copyright-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#d2d7e6;font-size:12.5px}
 
+/* MODALS */
 .modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:3000;align-items:center;justify-content:center;padding:15px}
 .modal-backdrop.show{display:flex}
-.modal{width:min(480px,100%);background:#fff;border-radius:14px;padding:20px}
-.form-control{width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:10px;margin-bottom:12px;font:inherit}
+.modal{width:min(500px,100%);max-height:90vh;overflow-y:auto;background:#fff;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.modal-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--border)}
+.modal-head h3{font-size:19px}
+.close-modal{border:0;background:none;font-size:24px;cursor:pointer;line-height:1}
+.modal-body{padding:20px}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:12.5px;font-weight:700;margin-bottom:5px}
+.form-control{width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:10px 12px;font:inherit;font-size:14px;outline:none}
+.form-control:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(9,30,94,.1)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.error{font-size:11.5px;color:#dc2626;margin-top:3px}
+.success-message{display:none;background:#ecfdf5;color:#047857;padding:10px;border-radius:6px;margin-top:12px;font-size:13px}
 
+/* BACK TO TOP */
+.back-top{position:fixed;right:18px;bottom:18px;width:40px;height:40px;border:0;border-radius:50%;background:var(--blue);color:#fff;display:none;align-items:center;justify-content:center;cursor:pointer;z-index:2000;box-shadow:0 4px 10px rgba(0,0,0,0.2)}
+.back-top.show{display:flex}
+
+/* RESPONSIVE */
 @media(max-width:992px){
-    .course-hero-grid, .details-grid, .footer-grid{grid-template-columns:1fr}
     .main-menu{display:none}
+    .mobile-toggle{display:block}
+    .course-hero-grid, .details-grid{grid-template-columns:1fr;gap:30px}
+    .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:576px){
+    .top-bar{display:none}
+    .brand-title{font-size:20px}
+    .brand-subtitle{font-size:8.5px;letter-spacing:2.5px}
+    .header-actions .btn-primary{display:none}
+    .course-hero h1{font-size:28px}
+    .footer-grid{grid-template-columns:1fr;gap:25px}
+    .form-row{grid-template-columns:1fr}
+    .copyright-inner{flex-direction:column;text-align:center}
 }
 </style>
 </head>
 <body>
 
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="container top-bar-inner">
+        <div class="top-bar-phones">
+            <i class="fa-solid fa-phone"></i> 
+            <a href="tel:+919404510513">+91 94045 10513</a> &nbsp;|&nbsp; 
+            <a href="tel:+919834673813">+91 98346 73813</a> &nbsp;|&nbsp; 
+            <a href="tel:+919960989868">+91 99609 89868</a>
+        </div>
+        <div>
+            <span>Follow Us</span> &nbsp;
+            <a href="https://www.instagram.com/_visionorbit" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- PRIMARY HEADER -->
 <header class="primary-header">
     <div class="container primary-header-inner">
-        <a class="brand-logo" href="index.html">
+        <a class="header-logo brand-logo" href="index.html">
             <div class="brand-title">VISION <span>ORBIT</span></div>
             <div class="brand-subtitle">IT SERVICES</div>
         </a>
+
         <nav>
             <ul class="main-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#courses">Courses</a></li>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#courses">Diploma Courses</a></li>
+                <li><a href="index.html#standalone-courses">Standalone Courses</a></li>
+                <li><a href="index.html#reviews">Reviews</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
-        <button class="btn btn-primary" onclick="openEnroll()">Enroll Now</button>
+
+        <div class="header-actions">
+            <button class="btn btn-primary" onclick="openEnroll()">Enroll Now</button>
+            <button class="mobile-toggle" aria-label="Open Navigation" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </div>
+
+    <div id="mobileMenu" style="display:none;background:#fff;border-top:1px solid #eee;padding:15px 5%;">
+        <a href="index.html#home" onclick="toggleMobileMenu()" style="display:block;padding:10px 0;font-weight:600;border-bottom:1px solid #f1f5f9;">Home</a>
+        <a href="index.html#about" onclick="toggleMobileMenu()" style="display:block;padding:10px 0;font-weight:600;border-bottom:1px solid #f1f5f9;">About Us</a>
+        <a href="index.html#courses" onclick="toggleMobileMenu()" style="display:block;padding:10px 0;font-weight:600;border-bottom:1px solid #f1f5f9;">Diploma Courses</a>
+        <a href="index.html#standalone-courses" onclick="toggleMobileMenu()" style="display:block;padding:10px 0;font-weight:600;border-bottom:1px solid #f1f5f9;">Standalone Courses</a>
+        <a href="index.html#reviews" onclick="toggleMobileMenu()" style="display:block;padding:10px 0;font-weight:600;border-bottom:1px solid #f1f5f9;">Reviews</a>
+        <a href="index.html#contact" onclick="toggleMobileMenu()" style="display:block;padding:10px 0;font-weight:600;border-bottom:1px solid #f1f5f9;">Contact</a>
+        <button class="btn btn-primary" onclick="openEnroll();toggleMobileMenu()" style="width:100%;margin-top:15px;">Enroll Now</button>
     </div>
 </header>
 
+<!-- COURSE HERO -->
 <section class="course-hero">
     <div class="container course-hero-grid">
         <div>
@@ -122,6 +221,7 @@ footer{background:#030d3e;color:#fff;padding-top:50px}
     </div>
 </section>
 
+<!-- DETAILS & SYLLABUS -->
 <section class="details-section">
     <div class="container details-grid">
         <div>
@@ -209,53 +309,139 @@ footer{background:#030d3e;color:#fff;padding-top:50px}
     </div>
 </section>
 
-<footer>
+<!-- FOOTER -->
+<footer id="contact">
     <div class="container footer-grid">
         <div>
-            <div class="brand-title" style="color:#fff">VISION <span style="color:var(--yellow)">ORBIT</span></div>
-            <p style="color:#cbd5e1;font-size:13px;margin-top:10px">Industry-focused training with real projects & mentorship.</p>
+            <a class="brand-logo footer-logo-text" href="index.html#home" style="margin-bottom:18px; display:inline-flex;">
+                <div class="brand-title">VISION <span>ORBIT</span></div>
+                <div class="brand-subtitle">IT SERVICES</div>
+            </a>
+
+            <p class="footer-about">Learn in-demand IT skills with expert mentors. Build practical skills, work on real projects and prepare for your career with Vision Orbit.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/_visionorbit" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" onclick="return false" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" onclick="return false" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
         </div>
+
         <div>
-            <h4>Quick Links</h4>
-            <ul class="footer-links" style="margin-top:10px">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#courses">Courses</a></li>
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="index.html#home">› Home</a></li>
+                <li><a href="index.html#about">› About Us</a></li>
+                <li><a href="index.html#courses">› Diploma Courses</a></li>
+                <li><a href="index.html#standalone-courses">› Standalone Courses</a></li>
+                <li><a href="index.html#contact">› Contact</a></li>
             </ul>
         </div>
+
         <div>
-            <h4>All Courses</h4>
-            <ul class="footer-links" style="margin-top:10px">
-                <li><a href="python-fullstack.html">Python Full Stack</a></li>
-                <li><a href="php-fullstack.html">PHP Full Stack</a></li>
-                <li><a href="mern-stack.html">MERN Stack</a></li>
-                <li><a href="artificial-intelligence.html">Artificial Intelligence</a></li>
+            <h3 class="footer-title">Top Programs</h3>
+            <ul class="footer-links">
+                <li><a href="python-fullstack.html">› Python Full Stack</a></li>
+                <li><a href="php-fullstack.html">› PHP Full Stack</a></li>
+                <li><a href="mern-stack.html">› MERN Stack</a></li>
+                <li><a href="artificial-intelligence.html">› Artificial Intelligence</a></li>
             </ul>
         </div>
+
         <div>
-            <h4>Contact</h4>
-            <p style="color:#cbd5e1;font-size:13px;margin-top:10px">Nashik Road, Nashik 422101</p>
-            <p style="color:#cbd5e1;font-size:13px;margin-top:5px">+91 94045 10513</p>
+            <h3 class="footer-title">Contact Us</h3>
+            <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div><div>SHOP NO.1 GANRAJ SANKUL, HANUMAN CHOWK, CHEHEDI PUMPING ROAD, NASHIK ROAD, NASHIK 422101.</div></div>
+            <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-phone"></i></div><div><a href="tel:+919404510513">+91 94045 10513</a></div></div>
+            <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-envelope"></i></div><div><a href="mailto:info@visionorbit.in">info@visionorbit.in</a></div></div>
+        </div>
+    </div>
+
+    <div class="container copyright">
+        <div class="copyright-inner">
+            <p>© 2026 Vision Orbit IT Services. All Rights Reserved.</p>
+            <div>Privacy Policy &nbsp; | &nbsp; Terms & Conditions</div>
         </div>
     </div>
 </footer>
 
+<!-- ENROLL MODAL -->
 <div class="modal-backdrop" id="enrollModal">
     <div class="modal">
-        <h3 style="margin-bottom:15px;color:var(--blue)">Enquire for AI Course</h3>
-        <form onsubmit="event.preventDefault();alert('Application Submitted!');closeModal('enrollModal')">
-            <input class="form-control" type="text" placeholder="Full Name" required>
-            <input class="form-control" type="tel" placeholder="Mobile Number" required>
-            <input class="form-control" type="email" placeholder="Email Address" required>
-            <button class="btn btn-primary" type="submit" style="width:100%">Submit</button>
-            <button type="button" onclick="closeModal('enrollModal')" style="background:none;border:none;margin-top:10px;cursor:pointer;color:var(--muted);width:100%">Cancel</button>
-        </form>
+        <div class="modal-head">
+            <h3>Enroll Now</h3>
+            <button class="close-modal" onclick="closeModal('enrollModal')" aria-label="Close Modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="enrollForm" onsubmit="submitEnroll(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" id="name" type="text" placeholder="Full Name" required>
+                        <div class="error" id="nameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile</label>
+                        <input class="form-control" id="mobile" type="tel" placeholder="Mobile Number" required>
+                        <div class="error" id="mobileError"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control" id="email" type="email" placeholder="Email Address" required>
+                    <div class="error" id="emailError"></div>
+                </div>
+                <div class="form-group">
+                    <label>Description / Interested Course</label>
+                    <textarea class="form-control" id="description" rows="3">Artificial Intelligence (AI)</textarea>
+                </div>
+                <button class="btn btn-primary" type="submit" style="width:100%;">Submit Application</button>
+                <div class="success-message" id="successMessage">Thank you! Your enrollment request has been submitted.</div>
+            </form>
+        </div>
     </div>
 </div>
 
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
 <script>
-function toggleModule(header){header.nextElementSibling.classList.toggle('show');}
-function openEnroll(){document.getElementById('enrollModal').classList.add('show');}
-function closeModal(id){document.getElementById(id).classList.remove('show');}
+function toggleMobileMenu(){
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+function toggleModule(header){
+    header.nextElementSibling.classList.toggle('show');
+}
+function openEnroll(){
+    document.getElementById("enrollModal").classList.add("show");
+    document.body.style.overflow = "hidden";
+}
+function closeModal(id){
+    document.getElementById(id).classList.remove("show");
+    document.body.style.overflow = "";
+}
+document.querySelectorAll(".modal-backdrop").forEach(backdrop=>{
+    backdrop.addEventListener("click",e=>{
+        if(e.target===backdrop) closeModal(backdrop.id);
+    });
+});
+function submitEnroll(e){
+    e.preventDefault();
+    document.getElementById("successMessage").style.display="block";
+    document.getElementById("enrollForm").reset();
+    setTimeout(()=>{
+        closeModal("enrollModal");
+        document.getElementById("successMessage").style.display="none";
+    },2000);
+}
+window.addEventListener("scroll",()=>{
+    document.getElementById("backTop").classList.toggle("show", window.scrollY > 400);
+});
+document.addEventListener("keydown",e=>{
+    if(e.key==="Escape"){
+        document.querySelectorAll(".modal-backdrop.show").forEach(m=>closeModal(m.id));
+    }
+});
 </script>
 </body>
 </html>
